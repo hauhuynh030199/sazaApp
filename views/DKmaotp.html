@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        *p{
+            text-align: center;
+            margin: auto;
+        }
+        h5{
+            padding-bottom: 50px;
+        }
+        .frameDK {
+            height: 600px;
+            width: 400px;
+            margin: 100px auto 16px;
+            font-size: 16px;
+            background-color: #E5E5E5;
+        }
+        .frameDN {
+            height: auto;
+            width: 400px;
+            margin: 100px auto 16px;
+
+            background-color: #E5E5E5;
+            font-size: 20px;
+        }
+        .nameLogo{
+            padding-top: 50px;
+            text-align: center;
+        }
+        .textcenter{
+            text-align: center;
+        }
+        .sizebutton{
+            text-align: center;
+            margin-top: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            width: 380px;
+            height: 50px;
+        }
+        .sizebuttonDN{
+            text-align: center;
+            margin-top: 50px;
+            margin-right: 10px;
+            cursor: pointer;
+            width: 360px;
+            height: 50px;
+            margin-left: 21px;
+            font-size: 25px;
+        }
+        .textor{
+            padding-top: 30px;
+        }
+        .p-email{
+            margin-left: 10px;
+        }
+        .textemail{
+            margin-top: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 320px;
+            height: 30px;
+        }
+        .textpassword{
+            margin-top: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 320px;
+            height: 30px;
+        }
+        .textmobile{
+            margin-top: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 280px;
+            height: 30px;
+        }
+        .textotp{
+            margin-top: auto;
+            margin-left: 21px;
+            width: 40px;
+            height: 50px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .img-size{
+            height: 30px;
+            width: 40px;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .img-size2{
+            height: 40px;
+            width: 30px;
+            margin-left: 10px;
+        }
+        .buttonOTP{
+            text-align: center;
+            margin-left: 100px;
+            margin-right: 10px;
+            cursor: pointer;
+            width: 200px;
+            height: 50px;
+            margin-top: 100px;
+
+        }
+        .img-sizekhoa{
+            height: 30px;
+            width: 40px;
+            margin-left: 10px;
+        }
+        .p-title{
+            margin-top: 10px;
+        }
+        tr{
+            padding-bottom: 10px;
+        }
+        td{
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+        .canle{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        .sizechechbox{
+            width: 20px;
+            height: 20px;
+        }
+        .tieude{
+            display: inline-block;
+            font: bold 4.5em/1.5 Bebas, sans-serif;
+            color: #d60606; /*non-webkit fallback*/
+            font-size: 20px;
+            text-transform: uppercase;
+            background-image: linear-gradient(to bottom, #16f1d0, #1232d6, #090909, #d40c2a);
+            transition: background-position 0.5s;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-position: 0 100%;
+            text-align: center;
+            margin-left: 15px;
+        }
+        .testmau{
+            font: bold 4.5em/1.5 Bebas, sans-serif;
+            color: #d60606; /*non-webkit fallback*/
+            text-transform: uppercase;
+            background-image: linear-gradient(to bottom, #16f1d0, #ff0000, #090909, #d40c2a);
+            transition: background-position 0.5s;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-position: 0 100%;
+            text-align: center;
+            margin-left: 15px;
+        }
+        .frameDSTK{
+            height: 700px;
+            width: 1300px;
+            background-color: #E1EDED;
+            margin: 100px auto 16px;
+            border: 2px black solid;
+        }
+        .frameAnh{
+            height: 695px;
+            width: 70px;
+            float: left;
+
+        }
+        .frameQL{
+            height: 695px;
+            width: 1225px;
+            float: left;
+
+        }
+        .textTK{
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 320px;
+            height: 40px;
+        }
+        .buttonaddTK{
+            width: 300px;
+            height: 40px;
+            background-color: #005cbf;
+            text-align: center;
+            color: white;
+            float: right;
+            margin-right: 170px;
+
+        }
+        .frameTable{
+            margin-left: 100px;
+            width:800px ;
+            height: auto;
+            float: left;
+        }
+        .tableqltk{
+            border: 5px black solid;
+            text-align: center;
+        }
+        .father{
+            height: 500px;
+            overflow:visible;
+        }
+        .textadd{
+            width: 360px;
+            height: 30px;
+        }
+        .cach{
+            margin-left: 160px;
+        }
+        .textad2{
+            width: 400px;
+            height: 30px;
+        }
+        .buttonThem{
+            float: right;
+            background-color: red;
+            color: white;
+            margin-right: 140px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="frameDK">
+        <h1 class="font-weight-bold nameLogo nameLogo-top testmau" >SAZA</h1>
+        <h5 class="textcenter">Đăng ký tài khoản</h5>
+        <p class="p-email">Nhập mã xác thực :</p>
+        <form class="form-group">
+            <table>
+                <tr>
+                    <td> <input class="textotp" type="text"></td>
+                    <td> <input class="textotp" type="text"></td>
+                    <td> <input class="textotp" type="text"></td>
+                    <td> <input class="textotp" type="text"></td>
+                    <td> <input class="textotp" type="text"></td>
+                    <td> <input class="textotp" type="text"></td>
+
+                </tr>
+            </table>
+        </form>
+        <a href="DKpassword.html"><button class="sizebutton buttonOTP" style="background-color: #272EC8"><p style="color:white">Xác thực</p></button></a>
+    </div>
+</div>
+</body>
+</html>
