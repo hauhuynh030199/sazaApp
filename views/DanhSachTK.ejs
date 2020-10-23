@@ -229,6 +229,10 @@
             color: white;
             margin-right: 140px;
         }
+        .t{
+            Display: inline-block
+        }
+
     </style>
 </head>
 <body>
@@ -245,18 +249,35 @@
                     <tr class="tableqltk">
                         <td class="tableqltk">Số điện thoại</td>
                         <td class="tableqltk">Họ và Tên </td>
-                        <td class="tableqltk">Khóa người dùng</td>
+                        <td class="tableqltk">Trạng thái Người dùng</td>
                     </tr>
                     <% data.forEach(function(i){%>
+
+                        <%if (i.TT == true){%>
+                             <% var color = "#a9a9a9";%>
+                        <%}else{%>
+                             <%  color = "#E5E5E5";%>
+                        <%}%>
                         <tr class="tableqltk">
-                            <td class="tableqltk"><%=i.phoneNum%></td>
-                            <td class="tableqltk"><%=i.ten%> </td>
-                            <td class="tableqltk">
-                                <form method="post" action="">
-                                    <button>Block</button>
-                                </form>
+                            <td class="tableqltk" bgcolor = <%=color%>><%=i.phoneNum%></td>
+                            <td class="tableqltk" bgcolor = <%=color%>><%=i.ten%> </td>
+                            <td class="tableqltk" bgcolor = <%=color%>>
+
+                                            <form method="post" action="" class="t">
+                                                <input type="hidden" name="phoneNum" value="<%=i.phoneNum%>">
+                                                <input type="hidden" name="flag" value="false">
+                                                <button>Block</button>
+                                            </form>
+
+                                            <form method="post" action="" class="t">
+                                                <input type="hidden" name="phoneNum" value="<%=i.phoneNum%>">
+                                                <input type="hidden" name="flag" value="true">
+                                                <button>UnBlock</button>
+                                            </form>
+
                             </td>
                         </tr>
+
                     <%})%>
 
                 </table>

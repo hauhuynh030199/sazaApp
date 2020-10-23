@@ -13,7 +13,6 @@ var AWS = require("aws-sdk");
 AWS.config.update({
   region: "ap-southeast-1",
   endpoint: "http://dynamodb.ap-southeast-1.amazonaws.com",
-  
 });
 var dynamodb = new AWS.DynamoDB();
 var docClient = new AWS.DynamoDB.DocumentClient();
@@ -70,8 +69,6 @@ function findUser (res) {
            if(data.Items.length === 0){
                res.end(JSON.stringify({message :'Table rỗng '}));
            }
-            console.log(data.Items);
-         //  var User_data  = JSON.stringify(data.Items);
             res.render('DanhSachTK.ejs',{
                 data : data.Items
             });
@@ -106,7 +103,7 @@ app.get('/DKemail.html', (req, res) => {
 });
 app.post('/DKemail.html', (req, res) => {
    //res.send('<h1>hello</h1>');
-    console.log('phone :'+ req.body.phone);
+   // console.log('phone :'+ req.body.phone);
     var phone = req.body.phone;
     var pass = req.body.pass;
     //save(phone,pass);
@@ -114,9 +111,33 @@ app.post('/DKemail.html', (req, res) => {
 
 
  app.get('/DanhSachTK',(req, res) =>{
-   //  console.log('akakaka'+JSON.stringify(data_json));
-     //console.log(data)
      findUser(res);
+});
+ function updateUser(res,phoneNum,glag){
+     var check = glag === 'false' ? false : true;
+     var params = {
+         TableName : "UserAccounts",
+         Key :{
+             "phoneNum" : phoneNum
+         },
+         UpdateExpression : "set TT = :r",
+         ExpressionAttributeValues:{
+             ":r": check
+         }
+     };
+     docClient.update(params, function(err, data) {
+         if (err) {
+             console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
+         } else {
+             console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
+             res.redirect('/DanhSachTK');
+         }
+     });
+
+ }
+
+let post = app.post('/DanhSachTK',(req, res) =>{
+    updateUser(res,req.body.phoneNum,req.body.flag);
 });
 
 /*************************************** */
